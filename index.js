@@ -45,11 +45,11 @@ Use the copy function below to do the following:
     2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/) {
-	/*your code here*/
+function copy(array) {
+	return [...array];
 }
-{
-}
+console.log("Task1", copy(originalFlavors));
+
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Confirm that an array is exactly 31 flavors. Your function should accept:
     1. an array as a parameter
@@ -60,9 +60,14 @@ Confirm that an array is exactly 31 flavors. Your function should accept:
 For Example: is31Flavors(originalFlavors) will return true if your code is working properly
 */
 
-function is31Flavors(/*your code here*/) {
-	/*your code here*/
+function is31Flavors(array) {
+	if (array.length === 31) {
+		return true;
+	} else {
+		return false;
+	}
 }
+console.log(is31Flavors(originalFlavors));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Corporate has come to you with an idea for a new flavor: Rainbow Sherbert! They think this will be a game changer. You need to modify the array to include this flavor. 
@@ -76,8 +81,9 @@ Use the addFlavor function below to do the following:
     For example: addFlavor("Rainbow Sherbert", originalFlavors) should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-function addFlavor(/*your code here*/) {
-	/*your code here*/
+function addFlavor(array, string) {
+	array.unshift(string);
+	return array;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -149,9 +155,16 @@ Use the filterByWord function below to do the following:
     DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
 
-function filterByWord(/*your code here*/) {
-	/*your code here*/
+function filterByWord(array, string) {
+	const filteredArray = [];
+	for (let i = 0; i < array.length; i++) {
+		if (array[i].includes(string)) {
+			newArray.push(arr[i]);
+		}
+	}
+	return filteredArray;
 }
+console.log(filterByWord(originalFlavors, "chocolate"));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/
 
