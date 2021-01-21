@@ -97,8 +97,9 @@ Use the removeLastFlavor function below to do the following:
     For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/) {
-	/*your code here*/
+function removeLastFlavor(array, string) {
+	array.pop(string);
+	return array;
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -112,9 +113,14 @@ Use the getFlavorByIndex function below to do the following:
     For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/) {
-	/*your code here*/
+function getFlavorByIndex(array, index) {
+	var flavor = array[index];
+	return flavor;
 }
+console.log(getFlavorByIndex(originalFlavors, 1));
+
+// 1. receive an array of icecream flavos as argument
+// 2. receiving a specific number from the acual index
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -131,10 +137,12 @@ Use the removeFlavorByName function below to do the following:
     HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/) {
-	/*your code here*/
+function removeFlavorByName(array, flavor) {
+	var index = array.indexOf(flavor);
+	array.splice(index, 1);
+	return array;
 }
-
+console.log(removeFlavorByName(originalFlavors, "Banana Nut Fudge"));
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
 Your task is to write a function that checks every item in the array for a string and returns a new array called filteredArray with only the values 
@@ -159,7 +167,7 @@ function filterByWord(array, string) {
 	const filteredArray = [];
 	for (let i = 0; i < array.length; i++) {
 		if (array[i].includes(string)) {
-			newArray.push(arr[i]);
+			filteredArray.push(array[i]);
 		}
 	}
 	return filteredArray;
